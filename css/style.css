@@ -753,10 +753,19 @@ margin-top: -22px;
 .is-hidden {
     visibility: hidden;
 }
-.modal-content  { opacity : 0; transition:opacity 1s;
-    position : absolute;
+    .modal:not(.is-hidden) {
+        animation: fadeIn 0.3s ease-in-out;
     }
-.modal-content:hover { opacity : 1}
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+    
+        to {
+            opacity: 1;
+        }
+    }
 
 .modal-content .text-modal{
     height: 23px;
@@ -858,6 +867,7 @@ input:checked + svg {
     width: 16px;
     height: 15px;
     cursor: pointer;
+    accent-color: rgba(33, 150, 243, 1);
 }
 .checkbox-label span{
     height: 14px;
@@ -943,9 +953,18 @@ transition: background-color 250ms ease, box-shadow 250ms ease, cubic-bezier(0.4
     border: 1px solid rgba(255, 255, 255, 0.30);
     background: rgba(33, 150, 243, 0.00);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-    padding: 15px 295px 15px 16px;
     color: #fff;
+    text-indent: 16px;
 }
+.label-for-footer input:hover{
+    border-radius: 4px;
+    border: 1px solid #2196F3;;
+}
+.label-for-footer input:focus{
+    border-radius: 4px;
+    border: 1px solid #2196F3;;
+}
+
 .label-for-footer{
     display: flex;
     justify-content: center;
